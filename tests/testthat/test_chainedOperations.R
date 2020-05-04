@@ -39,7 +39,7 @@ test_that("monthly data", {
         expect_equal(nrow(d22$val), prod(1, 1, 1, (ysize-1)), info=i)
         
         # order of operations shouldn't matter
-        expect_equal(d12$val, d22$val, info=i)
+        expect_true(all_equal(d12$val, d22$val, info=i))
         if(exists("last_d12")) {  # ...nor should implementation
             expect_equal(as.data.frame(d12), last_d12)
         }
@@ -60,7 +60,7 @@ test_that("monthly data", {
         expect_equal(nrow(d42$val), prod(1, 1, 1, 12), info=i)
         
         # order of operations shouldn't matter
-        expect_equal(d32$val, d42$val, info=i)
+        expect_true(all_equal(d32$val, d42$val, info=i))
         if(exists("last_d32")) {  # ...nor should implementation
             expect_equal(as.data.frame(d32), last_d32)
         }
@@ -94,7 +94,7 @@ test_that("annual data", {
         expect_equal(nrow(d22$val), prod(1, 1, 1, ysize-1), info=i)
         
         # order of operations shouldn't matter
-        expect_equal(d12$val, d22$val, info=i)
+        expect_true(all_equal(d12$val, d22$val, info=i))
         if(exists("last_d12")) {  # ...nor should implementation
             expect_equal(as.data.frame(d12), last_d12)
         }
@@ -129,7 +129,7 @@ test_that("four-D data", {
         expect_equal(nrow(d22$val), prod(1, 1, zsize-1, ysize), info=i)
         
         # order of operations shouldn't matter
-        expect_equal(d12$val, d22$val, info=i)
+        expect_true(all_equal(d12$val, d22$val, info=i))
         if(exists("last_d12")) {  # ...nor should implementation
             expect_equal(as.data.frame(d12), last_d12)
         }
@@ -156,7 +156,7 @@ test_that("four-D data", {
         expect_equal(nrow(d43$val), prod(1, 1, 1, 12), info=i)
         
         # order of operations shouldn't matter
-        expect_equal(d33$val, d43$val, info=i)
+        expect_true(all_equal(d33$val, d43$val, info=i))
         if(exists("last_d33")) {  # ...nor should implementation
             expect_equal(as.data.frame(d33), last_d33)
         }
