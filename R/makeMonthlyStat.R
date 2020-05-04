@@ -89,7 +89,7 @@ makeMonthlyStat <- function(x, verbose=FALSE, sortData=FALSE, FUN=mean, ...) {
                 if(verbose) cat("Replacing missing lon/lat combinations\n")
                 
                 # Fix this by generating all lon/lat pairs and combining with answer
-                full_data <- tbl_df(data.frame(lon=as.vector(x$lon), lat=as.vector(x$lat)))
+                full_data <- tibble(lon=as.vector(x$lon), lat=as.vector(x$lat))
                 x$val <- left_join(full_data, x$val, by=c("lon", "lat"))
             }
             x$time <- 1:12

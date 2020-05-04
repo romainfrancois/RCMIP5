@@ -4,9 +4,19 @@
 \alias{loadEnsemble}
 \title{Load a unique CMIP5 ensemble}
 \usage{
-loadEnsemble(variable, model, experiment, ensemble, domain, path = ".",
-  recursive = TRUE, verbose = FALSE, force.ncdf = FALSE,
-  yearRange = NULL, ZRange = NULL)
+loadEnsemble(
+  variable,
+  model,
+  experiment,
+  ensemble,
+  domain,
+  path = ".",
+  recursive = TRUE,
+  verbose = FALSE,
+  force.ncdf = FALSE,
+  yearRange = NULL,
+  ZRange = NULL
+)
 }
 \arguments{
 \item{variable}{CMIP5 variable to load (required)}

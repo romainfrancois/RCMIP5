@@ -125,7 +125,7 @@ makeAnnualStat <- function(x, verbose=FALSE, sortData=FALSE, filterNum=TRUE, FUN
                 if(verbose) cat("Replacing missing lon/lat combinations\n")
                 
                 # Fix this by generating all lon/lat pairs and combining with answer
-                full_data <- tbl_df(data.frame(lon=as.vector(x$lon), lat=as.vector(x$lat)))
+                full_data <- as_tibble(data.frame(lon=as.vector(x$lon), lat=as.vector(x$lat)))
                 x$val <- left_join(full_data, x$val, by=c("lon", "lat"))
             }
             x$time <- sort(freqTable$year)

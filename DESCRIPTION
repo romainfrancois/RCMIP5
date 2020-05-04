@@ -27,4 +27,4 @@ Authors@R: c( person("Ben", "Bond-Lamberty", role = c("aut")),
 License: MIT + file LICENSE
 VignetteBuilder: knitr
 LazyData: true
-RoxygenNote: 6.0.1
+RoxygenNote: 7.1.0

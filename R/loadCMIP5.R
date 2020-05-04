@@ -188,5 +188,5 @@ convert_array_to_df <- function(x, verbose=FALSE) {
     assert_that(nrow(df) == length(x$val)) # right?
     
     df$value <- as.numeric(x$val)
-    tbl_df(df) # wrap as a dplyr tbl and return
+    as_tibble(df) # wrap as a dplyr tbl and return
 } # convert_array_to_df
